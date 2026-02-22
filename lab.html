@@ -3,7 +3,7 @@
 <head>
   <meta charset="utf-8"/>
   <meta name="viewport" content="width=device-width, initial-scale=1"/>
-  <title>MicroDSI · Laboratorio</title>
+  <title>MicroDSI · Lab</title>
   <link rel="stylesheet" href="assets/styles.css"/>
 </head>
 <body>
@@ -11,47 +11,65 @@
     <div class="row">
       <div class="brand">
         <b>MicroDSI</b>
-        <span>Laboratorio · Entregable (M2-S10)</span>
+        <span>Lab · Inventario + Priorización + SIPOC</span>
       </div>
       <nav class="nav">
         <a class="btn" href="index.html">Inicio</a>
         <a class="btn" href="feed.html">Feed</a>
-        <a class="btn" href="pista.html">Pistas</a>
+        <a class="btn" href="pista.htm">Pistas</a>
       </nav>
     </div>
   </header>
 
   <main class="container">
     <section class="panel">
-      <h3>Entregable rápido</h3>
-      <p>Completa inventario + priorización + SIPOC. Luego exporta a Markdown (para subir al campus).</p>
+      <h3>🧪 Laboratorio</h3>
+      <p>
+        Aquí se fabrica el entregable. Escribe rápido, pero deja huella: 1 dato o condición por decisión.
+        Cuando estés listo, genera el Markdown y descárgalo.
+      </p>
+
+      <div class="kpi" style="margin-top:12px">
+        <div class="box"><b>Meta</b><span>10–15 procesos L1 + Top 5 priorizados + 1 SIPOC</span></div>
+        <div class="box"><b>Tip</b><span>En priorización: justifica con volumen/tiempo/retrabajo/PII</span></div>
+        <div class="box"><b>Final</b><span>Exporta .md y te vas en paz</span></div>
+      </div>
     </section>
 
     <hr class="sep"/>
 
     <section class="formRow">
       <div class="panel">
-        <h3>1) Inventario (L1)</h3>
-        <label>Lista 10–15 procesos (verbo + objeto), uno por línea</label>
-        <textarea id="inv" placeholder="Ej: Gestionar incidencias&#10;Ej: Dar de alta proveedor&#10;..."></textarea>
+        <h3>1) Inventario (L1) — “Verbo + Objeto”</h3>
+        <label>10–15 procesos, uno por línea</label>
+        <textarea id="inv" placeholder="Ej: Gestionar incidencias&#10;Ej: Dar de alta proveedor&#10;Ej: Gestionar permisos&#10;..."></textarea>
+        <div class="footerHint">Atajo mental: si no empieza con un verbo, no pasa el filtro.</div>
       </div>
 
       <div class="panel">
-        <h3>2) Priorización</h3>
-        <label>Top 5 con Impacto/Esfuerzo/Riesgo (1–5) y score</label>
-        <textarea id="prio" placeholder="Proceso | Impacto | Esfuerzo | Riesgo | Score | Nota&#10;..."></textarea>
+        <h3>2) Priorización — Top 5</h3>
+        <label>Formato sugerido (1 por línea): Proceso | Impacto | Esfuerzo | Riesgo | Score | Nota</label>
+        <textarea id="prio" placeholder="Gestionar incidencias | 5 | 3 | 3 | -1 | 6000 tickets/mes, retrabajo 25%&#10;Alta proveedor | 4 | 4 | 4 | -4 | lead time alto, compliance&#10;..."></textarea>
+        <div class="footerHint">
+          Score recomendado: Impacto − Esfuerzo − Riesgo (o usa ratio, pero no mezcles).
+        </div>
       </div>
     </section>
 
     <hr class="sep"/>
 
     <section class="panel">
-      <h3>3) SIPOC</h3>
+      <h3>3) SIPOC — el “contrato” (1 página)</h3>
       <label>Completa Suppliers / Inputs / Process (4–6 pasos) / Outputs / Customers</label>
-      <textarea id="sipoc" placeholder="Suppliers: ...&#10;Inputs: ...&#10;Process: 1) ... 2) ...&#10;Outputs: ...&#10;Customers: ..."></textarea>
+      <textarea id="sipoc" placeholder="Suppliers: ...&#10;Inputs: ... (PII: sí/no)&#10;Process: 1) ... 2) ... 3) ... 4) ...&#10;Outputs: ...&#10;Customers: ..."></textarea>
+
       <div class="actions">
-        <button class="btn primary" id="btnExport" type="button">Generar Markdown</button>
-        <button class="btn" id="btnDownload" type="button">Descargar .md</button>
+        <button class="btn primary" id="btnExport" type="button">✨ Generar Markdown</button>
+        <button class="btn" id="btnDownload" type="button">⬇️ Descargar .md</button>
+      </div>
+
+      <div class="footerHint">
+        Mini-chequeo: ¿hay cliente claro? ¿outputs claros? ¿4–6 pasos? ¿1 restricción (PII/auditoría/criticidad)?
       </div>
     </section>
 
@@ -59,8 +77,9 @@
 
     <section class="panel">
       <h3>Salida (Markdown)</h3>
-      <textarea id="mdOut" placeholder="Aquí aparecerá el .md exportable..."></textarea>
-      <div class="footerHint">Puedes copiar/pegar o descargar el archivo.</div>
+      <label>Se genera aquí (puedes copiar/pegar o descargar)</label>
+      <textarea id="mdOut" placeholder="Aquí aparecerá el Markdown exportable..."></textarea>
+      <div class="footerHint">Consejo: añade 2 líneas finales con tu trade-off principal y la restricción dominante.</div>
     </section>
   </main>
 

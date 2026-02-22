@@ -11,9 +11,20 @@
     <div class="row">
       <div class="brand">
         <b>MicroDSI</b>
-        <span>Pistas · Caso guiado</span>
+        <span>Pistas · Caso guiado (M2-S10)</span>
       </div>
+
       <nav class="nav">
+        <!-- Selector de Track (controlado por assets/app.js) -->
+        <div class="btn" style="padding:8px 10px; border-radius:999px;">
+          <small style="margin-right:8px; color:var(--muted);">Track</small>
+          <select id="trackSel" style="border:none; background:transparent; color:var(--text); outline:none;">
+            <option value="itsm">ITSM Triage</option>
+            <option value="hr">HR</option>
+            <option value="proc">Procurement</option>
+          </select>
+        </div>
+
         <a class="btn" href="index.html">Inicio</a>
         <a class="btn" href="feed.html">Feed</a>
         <a class="btn primary" href="lab.html">Laboratorio</a>
@@ -25,7 +36,9 @@
     <div class="panel">
       <b>Progreso</b>
       <div class="progress"><i id="prog"></i></div>
-      <span class="footerHint">Desliza horizontalmente (trackpad/scroll). Cada pista pide una respuesta breve.</span>
+      <span class="footerHint">
+        Desplázate horizontalmente (trackpad/rueda). Cada pista pide una respuesta breve con 1 dato o condición.
+      </span>
     </div>
   </main>
 

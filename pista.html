@@ -1,1 +1,36 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>MicroDSI · Pistas</title>
+  <link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="row">
+      <div class="brand">
+        <b>MicroDSI</b>
+        <span>Pistas · Caso guiado</span>
+      </div>
+      <nav class="nav">
+        <a class="btn" href="index.html">Inicio</a>
+        <a class="btn" href="feed.html">Feed</a>
+        <a class="btn primary" href="lab.html">Laboratorio</a>
+      </nav>
+    </div>
+  </header>
 
+  <main class="container">
+    <div class="panel">
+      <b>Progreso</b>
+      <div class="progress"><i id="prog"></i></div>
+      <span class="footerHint">Desliza horizontalmente (trackpad/scroll). Cada pista pide una respuesta breve.</span>
+    </div>
+  </main>
+
+  <main id="pistaWrap" class="pistaWrap"></main>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>

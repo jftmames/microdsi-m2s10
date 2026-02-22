@@ -1,1 +1,69 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1"/>
+  <title>MicroDSI · Laboratorio</title>
+  <link rel="stylesheet" href="assets/styles.css"/>
+</head>
+<body>
+  <header class="topbar">
+    <div class="row">
+      <div class="brand">
+        <b>MicroDSI</b>
+        <span>Laboratorio · Entregable (M2-S10)</span>
+      </div>
+      <nav class="nav">
+        <a class="btn" href="index.html">Inicio</a>
+        <a class="btn" href="feed.html">Feed</a>
+        <a class="btn" href="pista.html">Pistas</a>
+      </nav>
+    </div>
+  </header>
 
+  <main class="container">
+    <section class="panel">
+      <h3>Entregable rápido</h3>
+      <p>Completa inventario + priorización + SIPOC. Luego exporta a Markdown (para subir al campus).</p>
+    </section>
+
+    <hr class="sep"/>
+
+    <section class="formRow">
+      <div class="panel">
+        <h3>1) Inventario (L1)</h3>
+        <label>Lista 10–15 procesos (verbo + objeto), uno por línea</label>
+        <textarea id="inv" placeholder="Ej: Gestionar incidencias&#10;Ej: Dar de alta proveedor&#10;..."></textarea>
+      </div>
+
+      <div class="panel">
+        <h3>2) Priorización</h3>
+        <label>Top 5 con Impacto/Esfuerzo/Riesgo (1–5) y score</label>
+        <textarea id="prio" placeholder="Proceso | Impacto | Esfuerzo | Riesgo | Score | Nota&#10;..."></textarea>
+      </div>
+    </section>
+
+    <hr class="sep"/>
+
+    <section class="panel">
+      <h3>3) SIPOC</h3>
+      <label>Completa Suppliers / Inputs / Process (4–6 pasos) / Outputs / Customers</label>
+      <textarea id="sipoc" placeholder="Suppliers: ...&#10;Inputs: ...&#10;Process: 1) ... 2) ...&#10;Outputs: ...&#10;Customers: ..."></textarea>
+      <div class="actions">
+        <button class="btn primary" id="btnExport" type="button">Generar Markdown</button>
+        <button class="btn" id="btnDownload" type="button">Descargar .md</button>
+      </div>
+    </section>
+
+    <hr class="sep"/>
+
+    <section class="panel">
+      <h3>Salida (Markdown)</h3>
+      <textarea id="mdOut" placeholder="Aquí aparecerá el .md exportable..."></textarea>
+      <div class="footerHint">Puedes copiar/pegar o descargar el archivo.</div>
+    </section>
+  </main>
+
+  <script src="assets/app.js"></script>
+</body>
+</html>
